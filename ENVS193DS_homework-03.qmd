@@ -78,31 +78,49 @@ Use the information from the `homework-starter-doc.qmd` to do this problem.
 
 ```{r}
 model0 <- lm(total_g ~ 1, # formula
-             data = drought_exp_clean) # data frame
+             data = drought_exp_clean) # data frame for null model
 
 # saturated model
 model1 <- lm(total_g ~ sla + water_treatment + species_name,
              data = drought_exp_clean)
 
 par(mfrow = c(2, 2))
-plot(model1)
+plot(model1) # data frame for model 1
 
 model2 <- lm(total_g ~ sla + water_treatment,
              data = drought_exp_clean)
 
-plot(model2)
+plot(model2) # data frame for model 2
 
 model3 <- lm(total_g ~ sla + species_name,
              data = drought_exp_clean)
 
-plot(model3)
+plot(model3) # data frame for model 3
 
+model4 <- lm(total_g ~ water_treatment + species_name,
+             data = drought_exp_clean) # created a fourth model with specific
+# leaf area and leaf dry weight (g)
 
+plot(model4) # data frame for model 4
 ```
 
-**Caption:** table captions typically go above the table. Number the table and provide a title. Describe what is in the table (columns and rows).  
+```{r}
+summary_table <- modelsummary::modelsummary( # this function takes a list of models
+  list( 
+    "null" = model0, # "model name" = model object
+    "model 1" = model1,
+    "model 2" = model2,
+    "model 3" = model3,
+    "model 4" = model4
+  ),
+  output = "flextable" # specify the output format here to format flextable
+)
+  
+summary_table <- set_caption(summary_table, caption = "Table 1: Total biomass as a function of SLA, water treatment, and species in five different models. Rows represent species and intercepts and columns represent each model (five total). At the bottom, there is an interpretation of the data including R-squared, AIC, BIC, F-statistic, and Root Mean Squared Error.")
 
-**Table:** In your table, each row should be a model with the model number (1, 2, 3, etc.) and the predictors for each model.
+print(summary_table)
+```
+
 
 #### b. Write a 5-6 sentence "statistical methods" section. (8 points)
 
