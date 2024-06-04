@@ -98,8 +98,7 @@ model3 <- lm(total_g ~ sla + species_name,
 plot(model3) # data frame for model 3
 
 model4 <- lm(total_g ~ water_treatment + species_name,
-             data = drought_exp_clean) # created a fourth model with specific
-# leaf area and leaf dry weight (g)
+             data = drought_exp_clean) # created a fourth model with water treatment and species name
 
 plot(model4) # data frame for model 4
 ```
@@ -130,7 +129,7 @@ Your answer should be in paragraph form and include:
 - how you chose the final model (i.e. to determine the model that best described ____, I...)  
 - how you visually determined that your final model conformed to the assumptions of a linear model (i.e. to evaluate linear model assumptions, I...)  
 
-**enter answer here**
+**To examine the influence of specific leaf area (SLA), water treatment, and species on biomass, I created 5 models to represent a null model, and total biomass as a function of the three predictor variables mentioned above. **
 
 #### c. Make a visualization of the model predictions with underlying data for your "best" model. (20 points)  
 
@@ -146,6 +145,7 @@ Show and annotate all your code. For full credit:
 - finalize the plot
 
 ```{r}
+
 
 ```
 
@@ -179,11 +179,9 @@ When thinking of affective visualization, you can expand your ideas of what data
 
 **Before starting, update your spreadsheet of observations.**  
 
-# could be drawing, canva, R etc
-
 #### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences). (2 points)
 
-**enter answer here**
+**For my personal data, I think that an affective visualization could embody a map of Isla Vista, labeling which routes I was more likely to take within the 32 observations that I have. By labeling each route with a color that represented the number of times a route was taken (ex: 3 = red, 5 = yellow, etc), I would be able to visualize a preference for certain routes on certain days, or generally. It would be interesting to see whether I had a favorite route (which I think I already do but seeing it physically on a map would be cool). It would also be interesting for me to rationalize why a certain route was my favorite and see if that changes my actions in the future.**
 
 #### b. Create a sketch (on paper) of your idea. (2 points)  
 
@@ -198,7 +196,22 @@ If you are making your visualization in R, show the annotated code and the outpu
 If you are making your visualization outside of R, include a photo of your visualization in your submission.
 
 ```{r}
-# how would we make a visualization, examples?
+# a map?
+library(leaflet)
+
+latitude <- 34.4133
+longitude <- -119.8610
+
+# Create a leaflet map centered around the specified location
+map <- leaflet() %>%
+  setView(lng = longitude, lat = latitude, zoom = 10) %>%
+  addTiles() # Add a tile layer for the base map
+
+# Add a marker at the specified location
+map <- addMarkers(map, lng = longitude, lat = latitude, popup = "Isla Vista")
+
+# Display the map
+map
 ```
 
 #### d. Write an artist statement. (8 points)
