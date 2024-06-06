@@ -191,8 +191,6 @@ Include a data citation.
 
 In this problem, you will create an **affective visualization** using your personal data in preparation for workshop during week 10.  
 
-In lecture, we talked about the three vertices of data visualization: 1) exploratory, 2) affective, and 3) communicative. We've done a lot of exploratory and communicative visualization, but have yet to think about affective visualization.  
-
 When thinking of affective visualization, you can expand your ideas of what data visualization _could_ be. Some examples of affective visualizations include:  
 
 - [Jill Pelto's paintings](https://www.jillpelto.com/gallery-1)  
@@ -213,24 +211,13 @@ Include a photo of this sketch in your submission.
 
 #### c. Make a draft of your visualization. (12 points)  
 
-Feel free to be creative with this! _You do not have to do this in R._ You could create a sculpture, painting, textile object, etc.  
-
-If you are making your visualization in R, show the annotated code and the output.  
-
-If you are making your visualization outside of R, include a photo of your visualization in your submission.
-
 **attached to submission**
 
 #### d. Write an artist statement. (8 points)
 
-An artist statement gives the audience context to understand your work. Write 4-5 sentences to address:  
+An artist statement gives the audience context to understand your work.
 
-- the content of your piece (what are you showing?)  
-- the influences (what did techniques/artists/etc. did you find influential in creating your work?)  
-- the form of your work (written code, watercolor, oil painting, etc.)  
-- your process (how did you create your work?)
-
-**enter answer here**
+**The context of my piece is a drawing of the place that I work and live with a visual description of my day-to-day route to and from campus and home. I was looking at the artwork provided by Stefanie Posavec and Giorgia Lupi's Dear Data project, and I was inspired to make something that represented about myself, such as my favorite ways to get to campus. I wanted to provide a visual of how I get to campus 4 times a week, and I had a fun time drawing a map of Isla Vista. My work was handdrawn on an iPad, so I consider it digital art. I first drew a map of Isla Vista and UCSB (more specifically just the area that I walk to get to campus), and I used a reference from Google Maps. It is not exactly to scale, especially the on-campus part, but I tried my best to recreate it. Then, I counted the number of times that I took a specific route and used that number as a color, and then I draw that specific route.**
 
 ### Problem 3. Statistical critique (36 points)
 
