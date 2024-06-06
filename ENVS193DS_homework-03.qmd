@@ -229,19 +229,19 @@ What are the statistical tests the authors are using to address their main resea
 
 Insert the figure or table you described in Homework 2 here.
 
-**enter answer here**
+**There were three that I looked at, they were analyses with univariate views, bivariate viewsm and multivariate views. The univariate view served to find statistical descriptions such as mean, standard deviation, kurtosis, skewness, etc. The bivariate tests included correlation analysis and regression analysis with various tests such as the Breuch-Pagan test, Wooldridges's test and the Hausman test. The multivariate view explored cluster analysis and used mathematical equations to find individual indicators for populations. I also attached the PDF of the tests to the end of the PDF of this document.**
 
 #### b. Visual clarity (10 points)
 
 How clearly did the authors _visually_ represent their statistics in figures? For example, are the x- and y-axes in a logical position? Do they show summary statistics (means and SE, for example) and/or model predictions, and if so, do they show the underlying data?
 
-**enter answer here**
+**The statistics were visually represented pretty well, with the axes being in the right spots and the data being relatively simple to analyze. Summary statistics were also shown for all the tests, but I do wish that there were visualizations of the model predictions in a table or plot. The underlying data was shown in the plots for the multivariate analysis, but I wish it was done a little more clearly. It would also be more easier to analyze for those who don't know what a lot of the statistical jargon is about.**
 
 #### c. Aesthetic clarity (10 points)
 
 How well did the authors handle "visual clutter"? How would you describe the the data:ink ratio?
 
-**enter answer here**
+**Visual clutter was handled well, though I wish that there were actaully more words than figures for some of them (such as the multivariate analysis) because it is hard to look at and analyze at some points. I also wish they went into more depth into maybe a comparative jitterplot similar to the one we visualized above. It was nice to see the histograms and the cluster map, as well as the correlation analysis for the bivariate tests.**
 
 #### d. Recommendations (can be longer than 4 sentences, 10 points)
 
@@ -249,4 +249,4 @@ What recommendations would you make to make the figure better? What would you ta
 
 **Alternatively**, if they did not represent their statistics in a figure, what kind of figure would you recommend to them? Describe the x- and y-axes, with any geometries and aesthetics (colors, etc.). Provide enough explanation such that someone would be able to create the figure you describe in code. Provide explanations/justifications for the figure you would recommend.
 
-**enter answer here**
+**I would just recommend that they provided more simple-to-read data, such as having plots with geom_ribbon, geom_point, or something similar to that with clear titles and names for each specific variable (such as country) that they are referencing. I also would make the colors stand out more, but I do think that the green and red colors were good indicators for positive and negative influences.**
