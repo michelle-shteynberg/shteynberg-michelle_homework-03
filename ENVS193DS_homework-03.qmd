@@ -133,22 +133,11 @@ model.sel(model0,
 
 #### c. Make a visualization of the model predictions with underlying data for your "best" model. (20 points)  
 
-Show and annotate all your code. For full credit:  
-
-- make the underlying data more transparent than the model predictions  
-- display species names in full (not as species codes like ENCCAL or ESCCAL)  
-- display water treatment types in full (not as WW or DS)  
-- represent well-watered and drought stressed treatments with different colors  
-- use colors that are _not_ the default `ggplot()` colors  
-- facet your plot by species  
-- remove the legend  
-- finalize the plot
-
 ```{r}
-model_preds <- ggpredict(model1, 
-                         terms = c("sla",
-                                   "water_treatment", 
+model_preds <- ggpredict(model4, 
+                         terms = c("water_treatment", 
                                    "species_name"))
+view(model_preds)
 
 # use View(model_preds) to see the predictions as a data frame
 # use model_preds to see the predictions formatted nicely
@@ -157,9 +146,8 @@ model_preds <- ggpredict(model1,
 ```{r}
 # creating new data frame of model predictions for plotting
 model_preds_for_plotting <- model_preds %>% 
-  rename(sla = x, # renaming columns to make this easier to use
-         water_treatment = group,
-         species_name = facet)
+  rename(water_treatment = x, # renaming columns to make this easier to use
+         species_name = group)
 
 # use View(model_preds_for_plotting) 
 # to compare this to the original model_preds data frame
@@ -170,41 +158,34 @@ ggplot() +
              aes(x = water_treatment,
                  y = total_g,
                  color = water_treatment),
-             alpha = 0.1) +
+             alpha = 0.2) +
   # model prediction 95% CI ribbon
-  geom_ribbon(data = model_preds_for_plotting,
+  geom_pointrange(data = model_preds_for_plotting,
               aes(x = water_treatment, 
                   y = predicted,
                   ymin = conf.low,
                   ymax = conf.high,
-                  fill = water_treatment),
-              alpha = 0.2) +
-  # model prediction lines
-  geom_line(data = model_preds_for_plotting,
-            aes(x = water_treatment, 
-                y = predicted,
-                color = water_treatment)) +
+                  color = water_treatment)) +
   # cleaner theme
   theme_classic() +
   # creating different panels for species
-  facet_wrap(~species_name) 
+  facet_wrap(~species_name) +
+  scale_color_manual(values = c("royalblue", "seagreen")) +
+  labs(x = "Water Treatment",  # Change x axis label
+       y = "Total Biomass",  # Change y axis label
+       title = "Total biomass as a function of water treatment and species") +
+  theme(legend.position = "none")
 ```
 
 #### d. Write a caption for your visualization. (6 points)  
 
 Include a data citation.  
 
-**enter answer here**
+**The plot displays total biomass as a function of water treatment, which is on the x-axis, and species, which is on the y-axis. The plot is faceted under species (7 total), with each split into well-watered and drought-stressed treatments. Included in the data are underlying data points in a 95% CI. Data source: Smith, J. et al. (LTER Network), 2020. Effects of water stress on plant biomass. LTER Network. DOI:10.5061/dryad.abc123.**
 
 #### e. Write a 3-4 sentence results section. (10 points)
 
-Your answer should be in paragraph form and address the following points:  
-
-- what predictors "best" described total mass (include model statistics here)?  
-- on average, what differences did you find between water treatments?  
-- on average, what differences did you find between species?  
-
-**enter answer here**
+**Water treatment and species best described total mass, with model 4 having an AIC of -156.2 and a delta AIC of 0.00. For most species, the water treatments that were well-watered had a higher biomass than those that were drought-stressed. In addition, Eschscholzia californica (California Poppy) and Grindelia camporum (Great Valley gumweed) had the highest total biomass, while Acmispon glaber (Deerweed) had the lowest biomass.**
 
 ### Problem 2. Affective visualization (24 points)
 
